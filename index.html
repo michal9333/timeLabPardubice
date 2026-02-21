@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeLab Pardubice - Anticafé</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styl pro slideshow na pozadí */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slideshow img.active {
+            opacity: 1;
+        }
+
+        /* Styl pro obsah */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header, nav, main, footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slideshow na pozadí -->
+    <div class="slideshow">
+        <img src="IMG_7444.jpg" alt="Obrázek 1" class="active">
+        <img src="IMG_7445.jpg" alt="Obrázek 2">
+        <img src="IMG_7446.jpg" alt="Obrázek 3">
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>TimeLab Coworking</h1>
+            <h2>Pardubice</h2>
+            <p class="slogan">Káva. Práce. Relax. v jednom prostoru.</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#kavarna">Kavárna</a></li>
+                <li><a href="#cowork">Coworking</a></li>
+                <li><a href="#relax">Relax & Hry</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#prihlasit">Přihlásit se</a></li>
+                <li><a href="#rezervace">Rezervace</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Obsah stránky -->
+        <section id="kavarna">
+            <h2>Kavárna</h2>
+            <p>🥪 Přines si vlastní jídlo a pití – Nikdo ti nebrání si přinést, co máš rád – od domácí bábovky po narozeninový dort.</p>
+        </section>
+
+        <section id="cowork">
+            <h2>Coworking</h2>
+            <p>☕ ANTIKAFÉ TIMELAB – TVŮJ PROSTOR PRO NÁPADY, JÍDLO I OSLAVY...</p>
+            <p>🕒 Navrhované hodinové sadzby:
+
+                🔹 Základná sadzba:
+                Pol hodina: 50 Kč
+                Prvá hodina: 80 Kč
+                Každá ďalšia hodina: 70 Kč
+                Celodenný strop: max. 300 Kč za deň
+                🔹 Študentská zľava:
+                Prvá hodina: 70 Kč
+                Ďalšia hodina: 50 Kč
+                Celodenný strop: 200 Kč
+                🔹 Firemní klienti / prenájom na stretnutia:
+                1 hodina pre skupinu (do 5 ľudí): 400 Kč
+                 Každá ďalšia osoba: +70 Kč/hod
+                Prenájom miestnosti na celý deň: od 2500 Kč
+                🔹 Vernostný program (napr. členstvo):
+                Mesačný vstup neobmedzene: 2500 Kč
+                Týždenný pass: 700 Kč
+                10-hodinový balíček (prepadne po mesiaci): 500 Kč
+            ✅ V cene zahrnuté:
+                 Wifi, káva, čaj,Voda. </p>
+        </section>
+
+        <section id="relax">
+            <h2>Relax & Hry</h2>
+            <p>Playstation, deskové hry, knihovna a pohodlné sezení. Odpočinek po práci je důležitý.</p>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Nájdeš nás v centru Pardubic, otevřeno po-so - 9:00 - 22:00. ned - zatvorene</p>
+            <p>Email: michaljaklovsky@seznam.cz</p>
+        </section>
+
+        <section id="prihlasit">
+            <h2>Přihlásit se</h2>
+            <p>Pro přihlášení do našeho systému zadejte své údaje:</p>
+            <form action="login.php" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="heslo">Heslo:</label>
+                <input type="password" id="heslo" name="heslo" required>
+
+                <button type="submit">Přihlásit se</button>
+            </form>
+            <p><a href="zmena_hesla.php">Zapomněli jste heslo?</a></p>
+        </section>
+
+        <section id="rezervace">
+            <h2>Rezervace</h2>
+            <p>Rezervujte si místo u nás. Vyplňte prosím formulář níže:</p>
+            <form id="rezervace-form">
+                <label for="jmeno">Jméno a příjmení:</label>
+                <input type="text" id="jmeno" name="jmeno" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefon">Telefon:</label>
+                <input type="tel" id="telefon" name="telefon" required>
+
+                <label for="pocet-osob">Počet osob:</label>
+                <input type="number" id="pocet-osob" name="pocet-osob" min="1" required>
+
+                <label for="datum">Datum:</label>
+                <input type="date" id="datum" name="datum" required>
+
+                <label for="cas-od">Čas od:</label>
+                <input type="time" id="cas-od" name="cas-od" required>
+
+                <label for="cas-do ">Čas do:</label>
+                <input type="time" id="cas-do" name="cas-do" required>
+
+                <button type="submit">Odeslat rezervaci</button>
+                <P>Rezervacia ušpesne odoslana</P>
+            </form>
+        </section>
+
+        <section id="newsletter"
+        style="background-color: #0a0707; padding: 20px;
+        margin-top: 20px; border-radius: 10px;">
+            <h2>InpactHubky: Náš newlesletter jednou za měsíc zdarma ve tvém e-mailu.</h2>
+            <p>Odemkni si dveře k:</p>
+            <ul>
+                <li> Inspirativním přibehum z našeho okolí</li>
+                <li> Pozvánká na vzdelavaci i rozvojové akce</li>
+            </ul>
+
+            <form action="newsletter.php" method="post">
+                <label for="newsletter-email">Tvuj e-mail:</label><br>
+                <input type="email" id="newsletter-email" name="e-mail" required placeholder="Zadej svůj e-mail"
+                style="width: 100%; padding: 10px; margin: 10px 0;"><br>
+                
+                <p style="font-size: 0.9em;">
+                    Odesláním souhlasíš se zpracováním osobních údajů podle <a href="zasady.html" 
+                    target="_blank">našich zásad</a>.</p>
+                
+                    <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                    Přihlásit se k odběru
+                    </button>
+                    </form>
+                    </section>
+                </main>
+
+
+    <footer>
+        <p>© 2025 TimeLab Pardubice</p>
+    </footer>
+
+    <script>
+        // JavaScript pro slideshow
+        const images = document.querySelectorAll('.slideshow img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+           
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+        // Spustit slideshow každé 3 sekundy
+        setInterval(showNextImage, 3000); // Změna obrázku každé 3 sekundy
+    </script>
+</body>
+</html>

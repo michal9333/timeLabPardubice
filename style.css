@@ -1,0 +1,104 @@
+/* Základní nastavení pro HTML a tělo stránky */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto; /* Zajistí, že stránka bude mít minimální výšku */
+    overflow-y: auto; /* Povolení vertikálního posouvání */
+}
+
+main {
+    position: relative;
+    z-index: 1; /* Zajistí, že obsah bude nad pozadím */
+    padding: 20px;
+}
+
+body {
+    min-height: 100%; 
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #f0f0f0;
+    line-height: 1.6;
+    background: #000; /* Základní barva pozadí */
+    overflow-x: hidden; /* Skryje horizontální posouvání */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background-size: cover;
+    background-position: center;
+    animation: slideshow 5s infinite; /* Animace pro slideshow */
+    pointer-events: none; /* Zajistí, že pozadí nebude blokovat interakce s obsahem */
+}
+
+/* Animace pro střídání obrázků */
+@keyframes slideshow {
+    0% { background-image: url('../obrazky/7444.jpg'); }
+    33% { background-image: url('../obrazky/7445.jpg'); }
+    66% { background-image: url('../obrazky/7446.jpg'); }
+    100% { background-image: url('../obrazky/7444.jpg'); }
+}
+/* Hlavička stránky */
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Poloprůhledné pozadí */
+    color: #fff;
+}
+
+/* Navigace */
+nav {
+    background: rgba(0, 0, 0, 0.7); /* Poloprůhledné pozadí */
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Animace pro slideshow */
+@keyframes slideshow {
+    0% { background-image: url('../obrazky/7444.jpg'); }
+    33% { background-image: url('../obrazky/7445.jpg'); }
+    66% { background-image: url('../obrazky/7446.jpg'); }
+    100% { background-image: url('../obrazky/7444.jpg'); }
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTop:hover {
+    background-color: #555;
+}
+
